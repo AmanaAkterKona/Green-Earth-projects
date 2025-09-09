@@ -23,6 +23,16 @@ debugAPIs();
 
 
 
+
+
+
+
+
+
+
+
+
+
 const categoryList = document.getElementById("categoryList");
 const treeGrid = document.getElementById("treeGrid");
 const cartBox = document.getElementById("cartBox");
@@ -129,34 +139,84 @@ function closeModal() {
 }
 
 // Cart functions
+// function addToCart(name, price) {
+//     cart.push({name, price});
+//     renderCart();
+// }
+// function renderCart() {
+//     cartBox.innerHTML = '';
+//     let total = 0;
+//     cart.forEach((item, i) => {
+//         total += item.price;
+//         const row = document.createElement("div");
+//         row.className = "flex justify-between items-center";
+//         row.innerHTML = `
+//             <span>${item.name}</span>
+//             <div class="flex items-center space-x-2">
+//                 <span class="text-green-700 font-semibold">$${item.price}</span>
+//                 <button onclick="removeFromCart(${i})" class="text-red-500 hover:text-red-700">❌</button>
+//             </div>`;
+//         cartBox.appendChild(row);
+//     });
+//     const tot = document.createElement("div");
+//     tot.className = "mt-3 pt-2 border-t font-bold flex justify-between";
+//     tot.innerHTML = `<span>Total:</span><span class="text-green-700">$${total}</span>`;
+//     cartBox.appendChild(tot);
+// }
+// function removeFromCart(i) {
+//     cart.splice(i,1);
+//     renderCart();
+// }
+
+
+
 function addToCart(name, price) {
-    cart.push({name, price});
-    renderCart();
+  cart.push({name,price});
+  renderCart();
 }
+
 function renderCart() {
-    cartBox.innerHTML = '';
-    let total = 0;
-    cart.forEach((item, i) => {
-        total += item.price;
-        const row = document.createElement("div");
-        row.className = "flex justify-between items-center";
-        row.innerHTML = `
-            <span>${item.name}</span>
-            <div class="flex items-center space-x-2">
-                <span class="text-green-700 font-semibold">$${item.price}</span>
-                <button onclick="removeFromCart(${i})" class="text-red-500 hover:text-red-700">❌</button>
-            </div>`;
-        cartBox.appendChild(row);
-    });
-    const tot = document.createElement("div");
-    tot.className = "mt-3 pt-2 border-t font-bold flex justify-between";
-    tot.innerHTML = `<span>Total:</span><span class="text-green-700">$${total}</span>`;
-    cartBox.appendChild(tot);
+  cartBox.innerHTML = "";
+  let total = 0;
+
+  // আলাদা রঙের লিস্ট
+  const colors = [
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] ",
+    "bg-[#F0FDF4] "
+  ];
+
+  cart.forEach((item,index)=>{
+    total += item.price;
+    const colorClass = colors[index % colors.length]; // ✅ আলাদা রঙ apply
+
+    const div=document.createElement("div");
+    div.className=`flex justify-between items-center p-2 rounded-lg ${colorClass}`;
+    div.innerHTML=`
+      <span>${item.name}</span>
+      <div class="flex items-center space-x-2">
+        <span class="text-green-700 font-semibold">$${item.price}</span>
+        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700">❌</button>
+      </div>`;
+    cartBox.appendChild(div);
+  });
+
+  const totalDiv=document.createElement("div");
+  totalDiv.className="mt-3 pt-2 border-t font-bold flex justify-between";
+  totalDiv.innerHTML=`<span>Total:</span><span class="text-green-700">$${total}</span>`;
+  cartBox.appendChild(totalDiv);
 }
-function removeFromCart(i) {
-    cart.splice(i,1);
-    renderCart();
+
+function removeFromCart(index){
+  cart.splice(index,1);
+  renderCart();
 }
+
 
 // Loader
 function showLoading() {
