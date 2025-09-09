@@ -1,8 +1,8 @@
 #Project Name :- Green-Earth-Projects
 
-1. What is the difference between var, let, and const?
+## 1. What is the difference between var, let, and const?
 answer:- var, let and const-
-## var:-
+# var:-
 
 1.পুরানো সিস্টেম, শুধু ES5 এ ব্যবহার হতো।
 
@@ -12,7 +12,7 @@ answer:- var, let and const-
 
 3.একই নাম বারবার ব্যবহার করা যায়, এটি ফ্লেক্সিবল কিন্তু নিরাপদ নয়।
 
-## const:-
+# const:-
 
 1.নতুন সিস্টেম, (ES6) এ ব্যবহার হয়।
 
@@ -22,7 +22,7 @@ answer:- var, let and const-
 
 4.তবে অবজেক্ট বা অ্যারে হলে ভেতরের ডেটা পরিবর্তন করা যায়।
 
-## let:-
+# let:-
 
 1.এটিও নতুন সিস্টেম, (ES6) এ ব্যবহার হয়।
 
@@ -36,7 +36,7 @@ answer:- var, let and const-
 
 
 
-2. What is the difference between map(), forEach(), and filter()?
+## 2. What is the difference between map(), forEach(), and filter()?
 ## answer:-
 ## forEach():-
 1.শুধু loop চালায় (প্রতিটি আইটেমে গিয়ে কাজ করে)।
@@ -47,7 +47,7 @@ answer:- var, let and const-
 
 4.প্রতিটি element এ গিয়ে function চালায়, কিন্তু শুধু কাজ করে, রেজাল্ট জমায় না।
 
-## map():-
+# map():-
 
 1.প্রতিটি element এর উপর কাজ করে নতুন অ্যারে return করে।
 
@@ -56,7 +56,7 @@ answer:- var, let and const-
 3.সবসময় নতুন অ্যারের length আগের মতোই থাকে (শুধু values পরিবর্তিত হয়)।
 
 
-## filter():-
+# filter():-
 
 1.প্রতিটি element এ গিয়ে শর্ত চেক করে।
 
@@ -68,9 +68,9 @@ answer:- var, let and const-
 
 
 
-3. What are arrow functions in ES6?
+## 3. What are arrow functions in ES6?
 ## answer:-
-## Arrow Function হলো function লেখার ছোট এবং আধুনিক সিনট্যাক্স, এটি ES6 theke এসেছে।
+# Arrow Function হলো function লেখার ছোট এবং আধুনিক সিনট্যাক্স, এটি ES6 theke এসেছে।
 
 1.function কীওয়ার্ড লিখতে হয় না , খুব ছোট করে লেখা যায়।
 
@@ -86,8 +86,8 @@ answer:- var, let and const-
 
 
 
-4. How does destructuring assignment work in ES6?
-## answer:- Destructuring হলো Object বা Array থেকে ভ্যালু বের করার একটি শর্টকাট পদ্ধতি।
+## 4. How does destructuring assignment work in ES6?
+# answer:- Destructuring হলো Object বা Array থেকে ভ্যালু বের করার একটি শর্টকাট পদ্ধতি।
 আগে যেভাবে আলাদা আলাদা ভ্যারিয়েবল বানিয়ে ডেটা নিতে হতো, এখন সেটা এক লাইনে করা যায়।
 
 1.কোড ছোট হয়।
@@ -98,8 +98,8 @@ answer:- var, let and const-
 
 
 
-5. Explain template literals in ES6. How are they different from string concatenation?
-## answer:- Template Literals হলো স্ট্রিং লেখার আধুনিক পদ্ধতি, যেটা ES6 theke এসেছে।
+## 5. Explain template literals in ES6. How are they different from string concatenation?
+# answer:- Template Literals হলো স্ট্রিং লেখার আধুনিক পদ্ধতি, যেটা ES6 theke এসেছে।
 এতে **backtick ()** ব্যবহার করা হয়, আর ${ }` এর ভেতরে variable বা expression লেখা যায়।
 
 1.Backtick (`) দিয়ে লেখা হয় ।
