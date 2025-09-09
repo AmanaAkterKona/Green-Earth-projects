@@ -1,3 +1,6 @@
+
+//debug part---------------------------
+
 async function debugAPIs() {
   const catRes = await fetch("https://openapi.programming-hero.com/api/categories");
   const catData = await catRes.json();
@@ -18,20 +21,7 @@ async function debugAPIs() {
 debugAPIs();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//categories part---------------------
 
 const categoryList = document.getElementById("categoryList");
 const treeGrid = document.getElementById("treeGrid");
@@ -40,7 +30,7 @@ const loading = document.getElementById("loading");
 let cart = [];
 let activeCategoryBtn = null;
 
-// Load Categories
+//Load Categories
 async function loadCategories() {
     const res = await fetch("https://openapi.programming-hero.com/api/categories");
     const data = await res.json();
@@ -48,7 +38,7 @@ async function loadCategories() {
 
     categoryList.innerHTML = "";
 
-    // Default All button
+    //Default All button
     const allBtn = createCategoryButton("All", null);
     allBtn.onclick = () => { setActive(allBtn); loadAllPlants(); };
     categoryList.appendChild(allBtn.parentElement);
@@ -58,9 +48,10 @@ async function loadCategories() {
         btn.onclick = () => { setActive(btn); loadPlantsByCategory(cat.id); };
         categoryList.appendChild(btn.parentElement);
     });
+
 }
 
-// Create category button helper
+// Create category button 
 function createCategoryButton(text, id) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -77,7 +68,9 @@ function setActive(btn) {
     activeCategoryBtn = btn;
 }
 
-// Load all plants
+
+ 
+// Load all plants--------------
 async function loadAllPlants() {
     showLoading();
     const res = await fetch("https://openapi.programming-hero.com/api/plants");
@@ -95,7 +88,7 @@ async function loadPlantsByCategory(id) {
     displayPlants(data.plants || []);
 }
 
-// Display plants in grid
+// Display plants
 function displayPlants(plants) {
     treeGrid.innerHTML = "";
     plants.forEach(plant => {
@@ -122,7 +115,7 @@ function displayPlants(plants) {
     });
 }
 
-// Open modal
+// modal part----------------
 async function openModal(id) {
     const res = await fetch(`https://openapi.programming-hero.com/api/plant/${id}`);
     const data = await res.json();
@@ -138,38 +131,6 @@ function closeModal() {
     document.getElementById("plantModal").classList.add("hidden");
 }
 
-// Cart functions
-// function addToCart(name, price) {
-//     cart.push({name, price});
-//     renderCart();
-// }
-// function renderCart() {
-//     cartBox.innerHTML = '';
-//     let total = 0;
-//     cart.forEach((item, i) => {
-//         total += item.price;
-//         const row = document.createElement("div");
-//         row.className = "flex justify-between items-center";
-//         row.innerHTML = `
-//             <span>${item.name}</span>
-//             <div class="flex items-center space-x-2">
-//                 <span class="text-green-700 font-semibold">$${item.price}</span>
-//                 <button onclick="removeFromCart(${i})" class="text-red-500 hover:text-red-700">❌</button>
-//             </div>`;
-//         cartBox.appendChild(row);
-//     });
-//     const tot = document.createElement("div");
-//     tot.className = "mt-3 pt-2 border-t font-bold flex justify-between";
-//     tot.innerHTML = `<span>Total:</span><span class="text-green-700">$${total}</span>`;
-//     cartBox.appendChild(tot);
-// }
-// function removeFromCart(i) {
-//     cart.splice(i,1);
-//     renderCart();
-// }
-
-
-
 function addToCart(name, price) {
   cart.push({name,price});
   renderCart();
@@ -179,7 +140,7 @@ function renderCart() {
   cartBox.innerHTML = "";
   let total = 0;
 
-  // আলাদা রঙের লিস্ট
+  // color list
   const colors = [
     "bg-[#F0FDF4] ",
     "bg-[#F0FDF4] ",
@@ -193,7 +154,7 @@ function renderCart() {
 
   cart.forEach((item,index)=>{
     total += item.price;
-    const colorClass = colors[index % colors.length]; // ✅ আলাদা রঙ apply
+    const colorClass = colors[index % colors.length]; 
 
     const div=document.createElement("div");
     div.className=`flex justify-between items-center p-2 rounded-lg ${colorClass}`;
@@ -201,7 +162,7 @@ function renderCart() {
       <span>${item.name}</span>
       <div class="flex items-center space-x-2">
         <span class="text-green-700 font-semibold">$${item.price}</span>
-        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700">❌</button>
+        <button onclick="removeFromCart(${index})" class="text-black-500 hover:text-black-300"><i class="fa-solid fa-xmark"></i></button>
       </div>`;
     cartBox.appendChild(div);
   });
@@ -218,7 +179,7 @@ function removeFromCart(index){
 }
 
 
-// Loader
+// Loader part---------------
 function showLoading() {
     loading.classList.remove("hidden");
     treeGrid.classList.add("hidden");
@@ -228,7 +189,7 @@ function hideLoading() {
     treeGrid.classList.remove("hidden");
 }
 
-// Initialize
+// Initialize part-----------
 loadCategories();
 loadAllPlants();
 
