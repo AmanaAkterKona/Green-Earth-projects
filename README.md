@@ -1,169 +1,109 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
+#Project Name :- Green-Earth-Projects
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+1. What is the difference between var, let, and const?
+answer:- var, let and const-
+## var:-
 
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+1.পুরানো সিস্টেম, শুধু ES5 এ ব্যবহার হতো।
 
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
+2.এটি ফাংশন স্কোপড, মানে শুধু ফাংশনের ভেতরে সীমাবদ্ধ থাকে।
 
----
-# Green Earth
+হোইস্টিং করা যায়।
 
+3.একই নাম বারবার ব্যবহার করা যায়, এটি ফ্লেক্সিবল কিন্তু নিরাপদ নয়।
 
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
+## const:-
 
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
+1.নতুন সিস্টেম, (ES6) এ ব্যবহার হয়।
 
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
+2.এটি ব্লক স্কোপড।
 
+3.একবার ডিক্লেয়ার করলে আবার ডিক্লেয়ার বা ভ্যালু পরিবর্তন করা যায় না।
 
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
+4.তবে অবজেক্ট বা অ্যারে হলে ভেতরের ডেটা পরিবর্তন করা যায়।
 
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
+## let:-
 
+1.এটিও নতুন সিস্টেম, (ES6) এ ব্যবহার হয়।
 
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
+2.এটি ব্লক স্কোপড, মানে { } ব্রেসের ভেতরে সীমাবদ্ধ থাকে।
 
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
+3.আবার ডিক্লেয়ার করা যায় না, তবে ভ্যালু পরিবর্তন করা যায়।
 
-4. Get 🌴Plants Detail <br/>
+4.হোইস্টিং হয়, কিন্তু টেম্পোরাল ডেড জোন থাকার কারণে আগে থেকে ব্যবহার করা যায় না।
 
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
 
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
 
 
 
+2. What is the difference between map(), forEach(), and filter()?
+## answer:-
+## forEach():-
+1.শুধু loop চালায় (প্রতিটি আইটেমে গিয়ে কাজ করে)।
 
-## ✅ Main Requirements 
+2.এটি কোন কিছু return করে না , মানে নতুন অ্যারে তৈরি করবে না।
 
-#### 1) Navbar
+3.সাধারণত শুধু প্রিন্ট বা ছোট কাজ করার জন্য ব্যবহার হয়।
 
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
+4.প্রতিটি element এ গিয়ে function চালায়, কিন্তু শুধু কাজ করে, রেজাল্ট জমায় না।
 
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
+## map():-
 
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
+1.প্রতিটি element এর উপর কাজ করে নতুন অ্যারে return করে।
 
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
+2.যখন এক অ্যারের data থেকে নতুন অ্যারে বানাতে হয়, তখন map ব্যবহার হয়।
 
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
+3.সবসময় নতুন অ্যারের length আগের মতোই থাকে (শুধু values পরিবর্তিত হয়)।
 
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
 
----
-#### 7) Create a README file to answer the following question-
+## filter():-
 
+1.প্রতিটি element এ গিয়ে শর্ত চেক করে।
 
-#### 1) What is the difference between var, let, and const?
+2.শুধু যেগুলো condition fulfill করে, সেগুলো নিয়ে নতুন অ্যারে return করবে।
 
-#### 2) What is the difference between map(), forEach(), and filter()? 
+3.নতুন অ্যারের length কম বা বেশি হতে পারে, condition এর উপর নির্ভর করে।
 
-#### 3) What are arrow functions in ES6?
 
-#### 4) How does destructuring assignment work in ES6?
 
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
 
-## ⚙️ Functionalities 
 
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
+3. What are arrow functions in ES6?
+## answer:-
+## Arrow Function হলো function লেখার ছোট এবং আধুনিক সিনট্যাক্স, এটি ES6 theke এসেছে।
 
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
+1.function কীওয়ার্ড লিখতে হয় না , খুব ছোট করে লেখা যায়।
 
-Display in a 3-column card layout.
+2.যদি মাত্র একটা parameter থাকে, তাহলে ব্র্যাকেট () না দিলেও চলে।
 
-3) Card Contents 
- Each card includes:
+3.যদি function এর ভিতরে শুধু একটা statement থাকে, তবে { } আর return না লিখলেও হয়।
 
-        - Image
+4.this keyword parent scope থেকে নেয় , normal function এর মতো আলাদা context তৈরি করে না।
 
-        -  Name
+5.ছোট ও পরিষ্কার কোড লেখা যায়।
 
-        - Short description
+6.this keyword এর ঝামেলা কমে যায় → callback function, array methods (map, filter, forEach) এ দারুণ কাজ করে।
 
-        - Category
 
-        - Price
 
-        - Add to Cart button
+4. How does destructuring assignment work in ES6?
+## answer:- Destructuring হলো Object বা Array থেকে ভ্যালু বের করার একটি শর্টকাট পদ্ধতি।
+আগে যেভাবে আলাদা আলাদা ভ্যারিয়েবল বানিয়ে ডেটা নিতে হতো, এখন সেটা এক লাইনে করা যায়।
 
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
+1.কোড ছোট হয়।
 
+2.পড়তে অনেক পরিষ্কার লাগে।
 
-##  🧪 Challenges 
+3.Object আর Array থেকে ডেটা বের করার কাজ সহজ হয়।
 
 
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
 
-    2) Total Calculation 
-    Calculate total price of trees in cart.
+5. Explain template literals in ES6. How are they different from string concatenation?
+## answer:- Template Literals হলো স্ট্রিং লেখার আধুনিক পদ্ধতি, যেটা ES6 theke এসেছে।
+এতে **backtick ()** ব্যবহার করা হয়, আর ${ }` এর ভেতরে variable বা expression লেখা যায়।
 
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
+1.Backtick (`) দিয়ে লেখা হয় ।
 
-    4) Loading Spinner
-    Show spinner while data is loading.
+2.${ } এর ভেতরে সরাসরি variable বা calculation বসানো যায়।
 
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+3.Multi-line string লেখা যায় ।
